@@ -1,3 +1,5 @@
+![Python package](https://github.com/juliosmelo/py_serpro_biodata/workflows/Python%20package/badge.svg?branch=master)
+
 ## Instalando
 
 ```bash
