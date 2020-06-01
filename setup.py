@@ -1,6 +1,7 @@
 import codecs
 import re
 import os
+import pathlib
 
 from setuptools import find_packages, setup
 
@@ -17,11 +18,11 @@ NAME = 'py_serpro_biodata'
 VERSION = get_version(os.path.join('py_serpro_biodata', '__init__.py'))
 DESCRIPTION = 'Python lib não oficial do serviço BIOValid do SERPRO no Brasil'
 URL = 'https://github.com/juliosmelo/py_serpro_biodata'
-AUTHOR = 'juliocsmelo'
+AUTHOR = 'Julio Melo'
 AUTHOR_EMAIL = 'juliocsmelo@gmail.com'
 LICENSE = 'MIT'
 PACKAGES = ['py_serpro_biodata']
-REQUIREMENTS = ['requests']
+REQUIREMENTS = ['requests', 'cryptography', 'python-jose']
 CLASSIFIERS = [
     'Development Status :: 5 - Production/Stable',
     'Intended Audience :: Developers',
@@ -38,12 +39,13 @@ CLASSIFIERS = [
 setup(name=NAME,
       version=VERSION,
       description=DESCRIPTION,
+      long_description_content_type='text/markdown',
       long_description=README,
       url=URL,
       author=AUTHOR,
       author_email=AUTHOR_EMAIL,
       license=LICENSE,
-      packages=find_packages(exclude=("tests",)),
+      packages=find_packages(exclude=("py_serpro_biodata/tests",)),
       install_requires=REQUIREMENTS,
       include_package_data=True,
       classifiers=CLASSIFIERS,

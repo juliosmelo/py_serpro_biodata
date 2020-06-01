@@ -1,5 +1,5 @@
 import os
-from serpro.biodata import SERPROBioValid
+from serpro.biovalid import SERPROBioValid
 
 SERPRO_CONSUMER_KEY = os.getenv("SERPRO_CONSUMER_KEY")
 SERPRO_CONSUMER_SECRET = os.getenv("SERPRO_CONSUMER_SECRET")
@@ -27,10 +27,3 @@ class TestSERPROBioValid:
         session = SERPROBioValid(SERPRO_CONSUMER_KEY, SERPRO_CONSUMER_SECRET)
         serpro_jwks_key = session.get_jwks_public_key()
         assert serpro_jwks_key is not None
-
-    def test_validate_jwks(self):
-        session = SERPROBioValid(SERPRO_CONSUMER_KEY, SERPRO_CONSUMER_SECRET)
-        key = session.get_jwks_public_key()
-        serpro_jwks_key = session.validate_jwks(key)
-        print('serpro_jwks_key', serpro_jwks_key)
-        assert serpro_jwks_key == 10
