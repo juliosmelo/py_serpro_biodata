@@ -14,7 +14,7 @@ class SERPROBioValid:
         self.consumer_secret = consumer_secret
         self.common_headers = {
             "Content-Type": "application/x-www-form-urlencoded"}
-        self.base_url = f"{SERPRO_API_GATEWAY}"
+        self.base_url = SERPRO_API_GATEWAY
 
     def authenticate(self):
         request_payload = {"grant_type": "client_credentials"}
